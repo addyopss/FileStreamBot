@@ -1,5 +1,6 @@
 import datetime
 import math
+import asyncio
 from FileStream import __version__
 from FileStream.bot import FileStream
 from FileStream.config import Telegram, Server
@@ -82,7 +83,13 @@ async def cb_data(bot, update: CallbackQuery):
         myfile = await db.get_file(usr_cmd[1])
         file_name = myfile['file_name']
         await update.answer(f"Sending File {file_name}")
-        await update.message.reply_cached_media(myfile['file_id'], caption=f'**{file_name}**')
+        sent_file = await update.message.reply_cached_media(myfile['file_id'], caption=f'**{file_name}**')
+        # Auto-delete after 30 minutes
+        await asyncio.sleep(1800)  # 1800 seconds = 30 minutes
+        try:
+            await sent_file.delete()
+        except Exception:
+            pass
     else:
         await update.message.delete()
 

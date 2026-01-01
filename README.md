@@ -41,7 +41,7 @@
 - Press the below button to Fast deploy on Heroku
 
 
-   [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
+   [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/addyopss/FileStreamBot)
 - Go to <a href="#mandatory-vars">variables tab</a> for more info on setting up environmental variables. </details>
 
 <details>
@@ -49,7 +49,7 @@
 <br>
 
 ```sh
-git clone https://github.com/avipatilpro/FileStreamBot
+git clone https://github.com/addyopss/FileStreamBot
 cd FileStreamBot
 python3 -m venv ./venv
 . ./venv/bin/activate
@@ -75,7 +75,7 @@ python3 -m FileStream
 <br>
 * Clone the repository:
 ```sh
-git clone https://github.com/avipatilpro/FileStreamBot
+git clone https://github.com/addyopss/FileStreamBot
 cd FileStreamBot
 ```
 * Build own Docker image:
@@ -183,6 +183,11 @@ PORT = 8080
 #### 🍟 Channel Support :
 
 *Bot also Supported with Channels. Just add bot Channel as Admin. If any new file comes in Channel it will edit it with **Get Download Link** Button.*
+
+#### 🔥 Auto-Delete Feature :
+
+*When users click the **"Get File"** button from the bot's response, the file will be automatically deleted after **30 minutes** to maintain privacy and save storage.*
+
 
 </details>
 
